@@ -1,10 +1,14 @@
 import { useState } from "react";
 
-function ListGroup() {
-	const items = ["bash", "sh", "ksh", "zsh", "bsh"];
+interface Props {
+	items: string[];
+	heading: string;
+	onSelectItem: (item: string, index: number) => void;
+}
 
-	const [activeIndex, setActiveIndex] = useState(-1);
+function ListGroup({ items, heading, onSelectItem }: Props) {
 	// useState returns an array
+	const [activeIndex, setActiveIndex] = useState(-1);
 
 	return (
 		<>
@@ -20,6 +24,7 @@ function ListGroup() {
 						key={index}
 						onClick={() => {
 							setActiveIndex(index);
+							onSelectItem(item, index);
 						}}
 					>
 						{item}
