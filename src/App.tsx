@@ -1,5 +1,6 @@
 import Alert from "./Alert";
 import ButtonComp from "./ButtonComp";
+import { DisAlert } from "./DisAlert";
 import ListGroup from "./components/ListGroup";
 
 function App() {
@@ -13,13 +14,13 @@ function App() {
 		console.log("Button clicked !!!");
 	};
 
+	/////////////////////////////////
 	return (
 		<div>
 			<Alert>
 				<i>Good</i> <b>Morning...</b>
 			</Alert>
 
-			<br />
 			<br />
 
 			<ListGroup
@@ -29,6 +30,9 @@ function App() {
 			/>
 
 			<br />
+
+			<DisAlert />
+
 			<br />
 
 			<ButtonComp
@@ -41,3 +45,6 @@ function App() {
 }
 
 export default App;
+function useState(arg0: number): [any, any] {
+	throw new Error("Function not implemented.");
+}
